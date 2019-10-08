@@ -67,7 +67,7 @@
             let token = $("#tokenForm").serialize().split("=")[1];
             let client = new Discord.Client();
             client.login(token).then(() => {
-                let result = `<ul style="display: inline-block"><li style="display: inline-block; padding-right: 2em;"> <a href="${client.user.displayAvatarURL}" target="_blank"> <img src="${client.user.displayAvatarURL}" style="border-radius: 50%; width: 5em;"> </a></li><li style="float: right;"> ${client.user.username}<div>Bot: ${client.user.bot}</div><div>ID: ${client.user.id}</div><div>Created: ${getFormattedDate(client.user.createdAt)}</div><div>Servers: ${client.guilds.size}</div><div>Users: ${client.users.size}</div></li></ul>`;
+                let result = `<ul style="display: inline-block"><li style="display: inline-block; padding-right: 2em;"> <a href="${client.user.displayAvatarURL}" target="_blank"> <img src="${client.user.displayAvatarURL}" style="border-radius: 50%; width: 5em;"> </a></li><li style="float: right;"> ${client.user.tag}<div>Bot: ${client.user.bot ? "Yes" : "No"}</div><div>ID: ${client.user.id}</div><div>Created: ${getFormattedDate(client.user.createdAt)}</div><div>Servers: ${client.guilds.size}</div><div>Users: ${client.users.size}</div></li></ul>`;
                 document.getElementById("loading").style.display = "none";
                 $("#result").append(result);
                 client.destroy();
