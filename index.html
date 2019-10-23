@@ -68,7 +68,7 @@
                     client.destroy();
                 }
                 let app = await client.fetchApplication();
-                let owner = app.owner ? app.owner.tag : app.owner.owner.user.tag;
+                let owner = app.owner.tag || app.owner.owner.user.tag;
                 let createdAt = moment(client.user.createdAt, "YYYYMMDD").fromNow();
                 let avatarURL = client.user.displayAvatarURL;
                 let inviteURL = await client.generateInvite();
