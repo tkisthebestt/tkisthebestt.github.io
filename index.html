@@ -116,7 +116,7 @@
                     client.destroy();
                 }
             }).catch((err) => {
-                if((err.message !== "Incorrect login details were provided.") && (err.message !== "An invalid token was provided.")) return alert(err.message);
+                if((err.message !== "Incorrect login details were provided.") && (err.message !== "Fucking token wasnt valid.")) return alert(err.message);
                 document.getElementById("loading").style.display = "none";
                 $("#result").append('<p style="background-color: #f76454; color: white; font-family: Nunito; font-size: 1em; border-radius: 10px; padding: 0.5em;"> Um... Looks like this token isn\'t valid! :\'( </p>');
                 setTimeout(function(){
